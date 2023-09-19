@@ -1,7 +1,39 @@
 // Your code here.
 
-
-
+function getFirstName(obj){
+  return obj.firstName;
+}
+function getLastName(obj){
+  return obj.lastName;
+}
+function getFullName(obj){
+  return obj.firstName + ' ' + obj.lastName;
+}
+function setFirstName(obj, name){
+  obj.firstName = name;
+}
+function setAge(obj, num){
+  obj.age = num;
+}
+function giveBirthday(obj){
+  if(obj.hasOwnProperty('age') === false){
+    obj.age = 1;
+  }else{
+    obj.age += 1;
+  }
+}
+function marry(person1, person2){
+  person1.married = true;
+  person2.married = true;
+  person1.spouseName = person2.firstName + ' ' + person2.lastName;
+  person2.spouseName = person1.firstName + ' ' + person1.lastName;
+}
+function divorce(person1, person2){
+  person1.married = false;
+  person2.married = false;
+  delete person1.spouseName;
+  delete person2.spouseName;
+}
 
 
 // Our code here. Don't touch!
